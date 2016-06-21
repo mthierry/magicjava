@@ -40,17 +40,18 @@ public class RomanNumber {
             }
 
             if (number / 10 > 0) {
+                sb.append(oneToNine(number - 10, map.get(10)));
                 sb.append("X");
-                sb.append(oneToNine(number - 10));
+                ///sb.append(oneToNine(number - 10));
                 number = number % 10;
             }
 
-            sb.append(oneToNine(number));
+            sb.append(oneToNine(number, map.get(1)));
         }
         return sb.toString();
     }
 
-    private StringBuilder oneToNine(int number) {
+    private StringBuilder oneToNine(int number, String one) {
         StringBuilder sb = new StringBuilder();
         switch (number) {
             case 9:
@@ -80,11 +81,12 @@ public class RomanNumber {
                 sb.append(map.get(5));
                 break;
             case 3:
-                sb.append(map.get(1));
+                sb.append(one);
             case 2:
-                sb.append(map.get(1));
+                sb.append(one);
             case 1:
-                sb.append(map.get(1));
+                if (one.equalsIgnoreCase(map.get(1)))
+                    sb.append(one);
                 break;
             case 0:
                 break;
