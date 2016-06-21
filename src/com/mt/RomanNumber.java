@@ -35,14 +35,23 @@ public class RomanNumber {
             }
 
             if (number / 100 > 0) {
-                sb.append("C");
+                sb.append(map.get(100));
                 number = number % 100;
             }
 
+            if (number / 50 > 0) {
+                //if (number >= 60) {
+                //    sb.append(oneToNine(number / 10, map.get(50)));
+                //}
+                sb.append(map.get(50));
+                number = number % 50;
+            }
+
             if (number / 10 > 0) {
-                sb.append(oneToNine(number - 10, map.get(10)));
-                sb.append("X");
-                ///sb.append(oneToNine(number - 10));
+                if (number >= 20) {
+                    sb.append(oneToNine(number / 10, map.get(10)));
+                }
+                sb.append(map.get(10));
                 number = number % 10;
             }
 

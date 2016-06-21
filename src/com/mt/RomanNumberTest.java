@@ -25,6 +25,14 @@ public class RomanNumberTest {
         Assert.assertEquals("XI", rn.toRoman(11));
         Assert.assertEquals("XIV", rn.toRoman(14));
         Assert.assertEquals("XV", rn.toRoman(15));
+        Assert.assertEquals("XXVI", rn.toRoman(26));
+        Assert.assertEquals("XXXIII", rn.toRoman(33));
+        Assert.assertEquals("XXXIX", rn.toRoman(39));
+        Assert.assertEquals("L", rn.toRoman(50));
+        Assert.assertEquals("LVI", rn.toRoman(56));
+        Assert.assertEquals("LXI", rn.toRoman(61));
+        Assert.assertEquals("LXXXVIII", rn.toRoman(88));
+
 
         Assert.assertEquals("M", rn.toRoman(1000));
     }
